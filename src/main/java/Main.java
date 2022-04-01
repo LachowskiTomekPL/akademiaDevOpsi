@@ -1,10 +1,14 @@
 import java.sql.SQLOutput;
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Main {
 
 
     public static void main(String[] args) {
+        Animal newAnimal = new Animal("Lew",LocalDate.of(1990,03,20),TypeOfAnimal.AMPHIBIAN);
+        int age= newAnimal.animalsAge(1990);
+        System.out.println(age);
         //● Stwórz zmienne i przypisz do nich wartości :
         //○ val_integer typu integer z wartością 250
         //○ val_string typu String z wartością “Akademia jest super !”

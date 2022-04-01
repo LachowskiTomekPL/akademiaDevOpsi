@@ -3,11 +3,12 @@ import java.util.Objects;
 
 public class Animal {
     private String name;
-    private int yearOfBirth;
+    private LocalDate yearOfBirth;
     private TypeOfAnimal typeOfAnimal;
-    private static final int CURRENT_YEAR= 2022;
+    private static final LocalDate currentYear = LocalDate.now();
 
-    public Animal(String name, int yearOfBirth, TypeOfAnimal typeOfAnimal) {
+
+    public Animal(String name, LocalDate yearOfBirth, TypeOfAnimal typeOfAnimal) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.typeOfAnimal = typeOfAnimal;
@@ -21,11 +22,11 @@ public class Animal {
         this.name = name;
     }
 
-    public int getYearOfBirth() {
+    public LocalDate getYearOfBirth() {
         return yearOfBirth;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
+    public void setYearOfBirth(LocalDate yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
@@ -59,8 +60,8 @@ public class Animal {
                 '}';
     }
     
-    public int animalsAge(int CURRENT_YEAR, int yearOfBirth){
-        int age = CURRENT_YEAR - yearOfBirth;
+    public int animalsAge(int yearOfBirth){
+       int age = currentYear.getYear() - yearOfBirth;
         return age;
     }
 }
