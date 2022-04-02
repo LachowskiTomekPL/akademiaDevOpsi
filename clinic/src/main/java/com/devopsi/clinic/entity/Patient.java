@@ -1,31 +1,31 @@
 package com.devopsi.clinic.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import org.springframework.lang.NonNull;
-
+import lombok.*;
+import org.hibernate.validator.constraints.Length;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class Patient {
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @NonNull
-    private Long id;
+
+
+
+    @NotNull
     @Id
-    private Long personalId;
+//    @Length(min = 11, max = 11)
+    private long personalId;
+    private LocalDate dayOfBirth;
     private String firstName;
     private String lastName;
     private String address;
+//    @Length(min = 9, max = 13)
     private int contactPhoneNumber;
 
 
